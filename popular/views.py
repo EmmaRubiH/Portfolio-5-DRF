@@ -1,3 +1,27 @@
-from django.shortcuts import render
+from rest_framework import generics, permissions
+from drf_api.permissions import IsOwnerOrReadOnly
+from popular.models import Popular
+from popular.serializers import PopularSerializer
 
-# Create your views here.
+
+class PopularList(generics.ListCreateAPIView):
+    """
+    List likes or create a like if logged in.
+    """
+
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    serializer_class = PopularSerializer()
+    queryset = Popular.objects.all()
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
+class PopularDetail(generics.RetrieveDestroyAPIView):
+    """
+    Retrieve a like or delete it by id if you own it.
+    """
+
+    permission_classes = [IsOwnerOrReadOnly]
+    serializer_class = PopularSerializer
+    queryset = Popular.objects.all()
