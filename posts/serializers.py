@@ -35,25 +35,37 @@ class PostSerializer(serializers.ModelSerializer):
     def get_like_id(self, obj):
         user = self.context['request'].user
         if user.is_authenticated:
-            like = Like.objects.filter(
+            liked = Like.objects.filter(
                 owner=user, post=obj
             ).first()
-            return like.id if like else None
+            return liked.id if liked else None
         return None
 
     def get_popular_id(self, obj):
         user = self.context["request"].user
         if user.is_authenticated:
-            populared = Popular.objects.filter(owner=user, post=obj).first()
+            populared = Popular.objects.filter(
+                owner=user, post=obj).first()
             return populared.id if populared else None
         return None
 
     class Meta:
         model = Post
         fields = [
-            'id', 'owner', 'is_owner', 'profile_id',
-            'profile_image', 'created_at', 'updated_at',
-            'title', 'content', 'image', 'image_filter',
-            'like_id', 'likes_count', 'comments_count', 
-            'popular_id', 'populars_count',
+            'id',
+            'owner',
+            'is_owner',
+            'profile_id',
+            'profile_image',
+            'created_at',
+            'updated_at',
+            'title',
+            'content',
+            'image',
+            'image_filter',
+            'like_id',
+            'likes_count',
+            'comments_count',
+            'popular_id',
+            'populars_count',
         ]

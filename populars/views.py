@@ -10,7 +10,7 @@ class PopularList(generics.ListCreateAPIView):
     """
 
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    serializer_class = PopularSerializer()
+    serializer_class = PopularSerializer
     queryset = Popular.objects.all()
 
     def perform_create(self, serializer):
