@@ -1,14 +1,17 @@
-# API - Social Media
+# THE SPACE - API - Social Media
 
-## Project Goals
+![ami](/images/amiresponsive.png)
 
+## ABOUT:
 <hr>
+The space is a online blog, social media platford where users can create a profile and post their images along with a title and content. Users can also view other users profiles, comment, like and favourite them.
 
-* Design an interactive Front-End web application using HTML, CSS 
+## Project
 
 This repository is the backend of the application using the Django REST Framework(DRF) holding the API database for the front end part of the application.
 
 ## Technologies and Libraries
+<hr>
 
 ### Language used
 
@@ -42,15 +45,60 @@ This project was planned in the begining as a Diary page, but it was switched to
 
 ## Plan 
 <hr>
-The current plan now for the website/app is to follow the walkthrough by Code institute. 
+The current direction for this project is to follow the walkthrough given by Code Institute and add two unique models. These are popular and Contacts in contacts. popular model (to store the most liked posts) contact(to contact another user).
 
 
 ## LucidChart
 <hr>
 
-![lucidchart](images/lucidchart.png)
+![lucidchart](images/lucid.png)
 
 ## User Goals
 <hr>
+
+### User Goals:
+
+
+* As a site user I can register an account
+* As a site user I can delete my account
+* As a site user I can create posts
+* As a Site User I can Edit and Delete that Post at want
+* As a Site User I can Follow and Unfollow other Users
+* As a Site User I can Comment on other Users Posts
+* As a Site User I can Edit and Delete the Comment I own
+* As a Site User I can Like and Unlike Posts from other Users Posts
+
+- I did this in the begining, so the Site user stories for popular and contact is not made in issues and project.
+
+# Testing:
+<hr>
+
+I tested the API manually to ensure everything was working for my project.
+
+* When testing my superuser administrator in my back-end I can confirm all data entered from the front end is displaying!
+
+* checking that search feature returns correct
+* Manually verified each url path created to confirm they work and open without error
+* Testing that the CRUD functionality is available in: User, Post, Profile, Comments, Followers, Likes, Populars.
+* testing errors (details: not found) is working.
+* Creating a new item with url path
+* testing if editing a post and deleting a item works.
+
+
+## Bugs:
+Could not get the frontend and backend to sync (with the posts). It was a spelling mistake. hade write post (so forgot the s). 
+
+# Credits
+<hr>
+
+## Media:
+
+images is the same from the drf walkthrough project.
+
+## Content:
+
+* The biggest credit has to go Code Institute, I followed the Walkthroughs given, and developed a little on top of it.
+* Thanks to my mentor jubril and the slack-channel.
+
 
 
